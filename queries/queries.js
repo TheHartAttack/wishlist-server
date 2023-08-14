@@ -21,7 +21,7 @@ const items = async (parent, args, context, info) => {
   if (tokenVerified) {
     items = await Item.find().sort({order: 'asc'})
   } else {
-    items = await Item.find({private: false})
+    items = await Item.find({private: false}).sort({order: 'asc'})
   }
 
   return items
